@@ -64,4 +64,8 @@ RUN set -eux; \
 	eval "GOARCH=s390x go build $BUILD_FLAGS -o /go/bin/gosu-s390x"; \
 	file /go/bin/gosu-s390x
 
+RUN set -eux; \
+	eval "GOARCH=loong64 go build $BUILD_FLAGS -o /go/bin/gosu-loongarch64"; \
+	file /go/bin/gosu-loongarch64
+
 RUN set -eux; ls -lAFh /go/bin/gosu-*; file /go/bin/gosu-*
